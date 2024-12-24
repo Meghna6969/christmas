@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa!</title>
+</head>
+<br>
+<br>
+<body style="background-color:rgb(141, 16, 41) ;">
+    <h1 style ="color: rgb(214, 231, 237); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+              text-align: center;
+               "
+    >find out if you are on the NAUGHTY list!</h1>
+    <style>
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50
+}
+</style>
+<img src ="elf.png" alt="Elf" width = "250" height="250" class="center">
+
+<p style = "color:aliceblue; font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 20px; text-align: center;">Hello, type you name below to find out!!!</p>
+    
+    <br>
+
+    <div style = "text-align: center;"   class="container"> <input type="text" id="name" placeholder="Enter your name" required> 
+        <br>
+        <br>
+        <button onclick="checkList()">Check List</button> 
+        <div style="color: aliceblue; font-size: 30px;"    class="result" id="result"></div> 
+        <br>
+    <div class="image-container" id="imageContainer"></div>
+ </div>
+    <br> 
+    <script> 
+    
+    function checkList() { 
+        const name = document.getElementById('name').value; 
+        const resultDiv = document.getElementById('result');
+        const imageContainer = document.getElementById('imageContainer');
+       
+       
+        if (name) { 
+            const isNaughty = Math.random() < 0.5; // Randomly determine if naughty or nice 
+         if (isNaughty) { 
+            resultDiv.innerHTML = ` Bro's on Santa's permanent naughty list fr this year💀 `;  
+            imageContainer.innerHTML = '<img src = "coal.jpg" alt ="coal" width = "250" height="250">';
+           } else { 
+            resultDiv.innerHTML = ` So good this year that Santa's considering early retirment 🤓🎄`; 
+            imageContainer.innerHTML = '<img src = "gift.avif" alt ="gift" width = "250" height="250">';
+        }
+         } else { 
+            resultDiv.innerHTML = 'Please enter your name.'; 
+
+         }
+        }
+ </script>
+</body>
+</html>
